@@ -1,0 +1,14 @@
+No. 
+For the first one, the last operation before the returning is an addition, not a recursive call.
+For the second one, it's also not a recursive call.
+
+
+Pseudo code:
+
+FibonacciTailRecursion(n, first, second)
+Input:  the n-th Fibonacci number we want to compute, the first Fibonacci number, the second Fibonacci number
+Output: the n-th Fibonacci number
+
+if n <= 0 then return first
+else return FibonacciTailRecursion(n-1, second, first + second)
+

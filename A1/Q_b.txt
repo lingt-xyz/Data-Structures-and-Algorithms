@@ -1,0 +1,1 @@
+The first algorithm has redundant calculations because for every recursive call it has to calculate BinaryFibonacci(n - 2) again when it calls BinaryFibonacci(n-1). In contrast, the second algorithm would temporarily store every Fibonacci number it has already calculated, so for the next Fibonacci number, it only needs to do an addition.

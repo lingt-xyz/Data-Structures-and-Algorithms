@@ -1,0 +1,3 @@
+As my computer cannot finish computing Fibonacci(100) in a reasonable time, so I have only calculated Fibonacci(60) since it had already cost roughly 2 hours.
+
+When n>=30, the first algorithm would be far slower than the second algorithm. In fact, the second algorithm consumes only a constant time.
