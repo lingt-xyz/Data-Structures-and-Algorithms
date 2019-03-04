@@ -36,4 +36,39 @@ public class Q1 {
 		//Q1.Hanoi(3, 'A', 'C', 'B');
 		Q1.StrictHanoi(3, 'A', 'C', 'B');
 	}
+	
+	// some right/wrong approaches
+	public static void t1(int n, char from_peg, char to_peg, char aux_peg) {
+		int diff = from_peg - to_peg;
+		if (diff == 1 || diff == -1) {
+			// This is a valid move
+			if (n == 1) {
+				System.out.printf("\n disk %d moved from " + from_peg + " to " + to_peg, n);
+
+				return;
+			}
+			t1(n - 1, from_peg, aux_peg, to_peg);
+			System.out.printf("\n disk %d moved from " + from_peg + " to " + to_peg, n);
+
+			t1(n - 1, aux_peg, to_peg, from_peg);
+		} else {
+			// So Here no movement possible only we have to reiterate for valid move
+			t1(n, from_peg, aux_peg, to_peg);
+			t1(n, aux_peg, to_peg, from_peg);
+		}
+	}
+
+	public static void t2(int n, char from, char to, char aux) {
+		if (n == 1 && Math.abs(from - to) == 1) {
+			System.out.println("1 moves " + from + " " + to);
+		} else if (Math.abs(from - to) == 2) {
+			t2(n, from, aux, to);
+			t2(n, aux, to, from);
+		} else {
+			t2(n - 1, from, aux, to);
+			System.out.println("1 moves " + from + " " + to);
+			t2(n - 1, aux, to, from);
+		}
+	}
+	
 }
