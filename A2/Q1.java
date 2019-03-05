@@ -71,4 +71,30 @@ public class Q1 {
 		}
 	}
 	
+	 public static void move(Stack<Integer> A, Stack<Integer> B, Stack<Integer> C, int n){
+        if (n==0){
+            return;
+        }
+        move(A, B, C, n-1);
+        B.push(A.pop());
+        System.out.println("Disk "+B.peek()+" moved from " + A + " to " + B);
+        move(C, B, A, n-1);
+        C.push(B.pop());
+        System.out.println("Disk "+C.peek()+" moved from" + B + " to " + C);
+        move(A, B, C, n-1);
+        return;
+    }
+	
+	    public static void main(String args[]) {
+        Stack<Integer> A = new Stack<>();
+        A.push(3);
+        A.push(2);
+        A.push(1);
+        Stack<Integer> B = new Stack<>();
+        Stack<Integer> C = new Stack<>(); 
+        int n =3;
+
+        move(A,B,C,n);
+    }
+	
 }
